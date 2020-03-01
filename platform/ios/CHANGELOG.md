@@ -9,7 +9,6 @@ Mapbox welcomes participation and contributions from everyone. Please read [CONT
 * The `IN` and `CONTAINS` predicate operators can now test whether a string is a substring of another string or whether the evaluated feature (`SELF`) lies within a given `MGLShape` or `MGLFeature`. ([#183](https://github.com/mapbox/mapbox-gl-native-ios/pull/183), [#184](https://github.com/mapbox/mapbox-gl-native-ios/pull/184])
 * Added the `MGLLineStyleLayer.lineSortKey` and `MGLFillStyleLayer.fillSortKey` properties. ([#179](https://github.com/mapbox/mapbox-gl-native-ios/pull/179), [#16194](https://github.com/mapbox/mapbox-gl-native/pull/16194), [#16220](https://github.com/mapbox/mapbox-gl-native/pull/16220))
 * The `MGLSymbolStyleLayer.iconTextFit` property now respects the cap insets of any [nine-part stretchable image](https://developer.apple.com/documentation/uikit/uiimage#1658362) passed into the `-[MGLStyle setImage:forName:]` method. You can define the stretchable area in Xcode’s asset catalog or by calling the `-[UIImage resizableImageWithCapInsets:]` method. ([#182](https://github.com/mapbox/mapbox-gl-native-ios/pull/182))
-* The `-[MGLStyle localizeLabelsIntoLocale:]` and `-[NSExpression mgl_expressionLocalizedIntoLocale:]` methods can now localize text into Traditional Chinese and Vietnamese. ([#173](https://github.com/mapbox/mapbox-gl-native-ios/pull/173))
 * Fixed an issue where an `MGLSymbolStyleLayer.lineDashPattern` value of `{1, 0}` resulted in hairline gaps. ([#16202](https://github.com/mapbox/mapbox-gl-native/pull/16202))
 * Improved the performance of loading a style that has many style images. ([#16187](https://github.com/mapbox/mapbox-gl-native/pull/16187))
 
@@ -18,6 +17,11 @@ Mapbox welcomes participation and contributions from everyone. Please read [CONT
 * You no longer need to explicitly capture the `MGLMapSnapshotter` object in the completion handler that you specify in `-[MGLMapSnapshotter startWithCompletionHandler:]`. Even if you declare the snapshotter locally without holding a strong reference to it, the snapshotter is only deallocated after the completion handler finishes, and the completion handler generally receives a valid snapshot. ([#210](https://github.com/mapbox/mapbox-gl-native-ios/pull/210))
 * The `-[MGLMapSnapshotter cancel]` method no longer calls the completion handler passed into `-[MGLMapSnapshotter startWithCompletionHandler:]`. ([#210](https://github.com/mapbox/mapbox-gl-native-ios/pull/210))
 * Fixed an issue where the `MGLMapSnapshotter.loading` property always returned `NO`, even while loading a snapshot. ([#210](https://github.com/mapbox/mapbox-gl-native-ios/pull/210))
+
+### Localization and internationalization
+
+* The `MGLIdeographicFontFamilyName` Info.plist key can now be set to the display names or PostScript names of individual fonts. ([#189](https://github.com/mapbox/mapbox-gl-native-ios/pull/189))
+* The `-[MGLStyle localizeLabelsIntoLocale:]` and `-[NSExpression mgl_expressionLocalizedIntoLocale:]` methods can now localize text into Traditional Chinese and Vietnamese. ([#173](https://github.com/mapbox/mapbox-gl-native-ios/pull/173))
 
 ### Networking and storage
 

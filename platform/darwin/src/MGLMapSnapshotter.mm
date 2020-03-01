@@ -680,8 +680,9 @@ NSArray<MGLAttributionInfo *> *MGLAttributionInfosFromAttributions(mbgl::MapSnap
                    .withAssetPath(NSBundle.mainBundle.resourceURL.path.UTF8String);
 
     // Create the snapshotter
+    auto localFontFamilyName = config.localFontFamilyName ? std::string(config.localFontFamilyName.UTF8String) : nullptr;
     _mbglMapSnapshotter = std::make_unique<mbgl::MapSnapshotter>(
-                                                                 size, pixelRatio, resourceOptions, mbgl::MapSnapshotterObserver::nullObserver(), config.localFontFamilyName);
+                                                                 size, pixelRatio, resourceOptions, mbgl::MapSnapshotterObserver::nullObserver(), localFontFamilyName);
     
     _mbglMapSnapshotter->setStyleURL(std::string(options.styleURL.absoluteString.UTF8String));
     
