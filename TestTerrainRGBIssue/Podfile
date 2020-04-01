@@ -1,0 +1,5 @@
+use_frameworks!
+ 
+target 'TestTerrainRGBIssue' do
+  pod 'Mapbox-iOS-SDK', '~> 5.8.0-beta.2'
+end
